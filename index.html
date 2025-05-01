@@ -1,70 +1,72 @@
-<!DOCTYPE html>
-<html lang="es">
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aquiles Salgado - Bienes Raíces</title>
+    <title>Premium Realty | Home</title>
     <style>
-        :root {
-            --beige: #f5f5dc;
-            --dark-brown: #4a403a;
-            --accent: #a45d5d;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-color: #F5F1EE;
+            --secondary-color: #E8E0D9;
+            --accent-color: #6D5C54;
         }
 
         body {
-            background-color: var(--beige);
-            color: var(--dark-brown);
+            font-family: 'Arial', sans-serif;
+            color: var(--accent-color);
         }
 
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1rem;
-            background: rgba(245, 245, 220, 0.9);
+            background-color: var(--primary-color);
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             z-index: 1000;
-            backdrop-filter: blur(5px);
         }
 
-        nav a {
-            color: var(--dark-brown);
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
+            color: var(--accent-color);
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--accent);
+        .nav-links a:hover {
+            color: #8B786D;
         }
 
         section {
             height: 100vh;
-            padding: 4rem 1rem;
-            scroll-snap-align: start;
+            padding: 4rem 5%;
         }
 
-        .inicio {
+        #home {
+            background-color: var(--primary-color);
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             text-align: center;
-            padding-top: 80px;
         }
 
         .profile-img {
@@ -73,180 +75,111 @@
             border-radius: 50%;
             object-fit: cover;
             margin: 2rem 0;
-            border: 5px solid var(--accent);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 5px solid var(--secondary-color);
         }
 
-        .tagline {
-            margin-top: auto;
-            font-size: 1.5rem;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1.2rem;
             max-width: 600px;
-            padding: 0 1rem;
+            line-height: 1.6;
         }
 
-        .propiedades-grid {
+        #portfolio {
+            background-color: var(--secondary-color);
+            padding-top: 80px;
+        }
+
+        .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
         }
 
-        .propiedad-card {
-            background: white;
+        .portfolio-card {
+            background-color: var(--primary-color);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
-        .propiedad-card:hover {
+        .portfolio-card:hover {
             transform: translateY(-5px);
         }
 
-        .propiedad-img {
+        .card-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-bottom: 3px solid var(--accent);
         }
 
         .card-content {
             padding: 1.5rem;
         }
 
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .card-content h3 {
+            margin-bottom: 0.5rem;
         }
 
-        input, select, button {
-            width: 100%;
-            padding: 0.8rem;
-            margin: 0.5rem 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        button {
-            background-color: var(--accent);
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #8d4b4b;
-        }
-
-        @media (min-width: 768px) {
-            section {
-                padding: 6rem 2rem;
-            }
-            
-            nav {
-                padding: 1.5rem 2rem;
-            }
-
-            .profile-img {
-                width: 300px;
-                height: 300px;
-            }
+        .card-content p {
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
     <nav>
-        <span>Aquiles Salgado</span>
-        <div>
-            <a href="#inicio">Inicio</a>
-            <a href="#propiedades">Propiedades</a>
-            <a href="#formulario">Formulario</a>
+        <div class="logo">Premium Realty</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#portfolio">Portfolio</a>
         </div>
     </nav>
 
-    <section id="inicio" class="inicio">
-        <h1>Aquiles Salgado</h1>
-        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-             alt="Aquiles Salgado" 
+    <section id="home">
+        <h1>Sarah Johnson</h1>
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+             alt="Real Estate Agent" 
              class="profile-img">
-        <p class="tagline">"Donde tus sueños de hogar se hacen realidad"</p>
+        <p class="description">Transforming your real estate dreams into reality. With over a decade of experience in luxury properties, I provide personalized service to find your perfect home.</p>
     </section>
 
-    <section id="propiedades">
-        <div class="propiedades-grid">
-            <div class="propiedad-card">
-                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                     alt="Casa moderna" 
-                     class="propiedad-img">
+    <section id="portfolio">
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                     alt="Modern House" 
+                     class="card-img">
                 <div class="card-content">
-                    <h3>Casa Contemporánea</h3>
-                    <p>4 dormitorios, 3 baños, 300m² con piscina y jardín privado</p>
+                    <h3>Modern Luxury Villa</h3>
+                    <p>Contemporary design meets functionality in this stunning 5-bedroom villa featuring smart home technology and panoramic ocean views.</p>
                 </div>
             </div>
-            <div class="propiedad-card">
-                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                     alt="Departamento" 
-                     class="propiedad-img">
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                     alt="Country Estate" 
+                     class="card-img">
                 <div class="card-content">
-                    <h3>Departamento Premium</h3>
-                    <p>3 dormitorios, 2 baños, 120m² en zona exclusiva con amenities</p>
+                    <h3>Countryside Estate</h3>
+                    <p>Experience rustic charm with modern amenities on this 20-acre property featuring equestrian facilities and organic gardens.</p>
                 </div>
             </div>
-            <div class="propiedad-card">
-                <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                     alt="Casa campestre" 
-                     class="propiedad-img">
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&auto=format&fit=crop&w=1346&q=80" 
+                     alt="City Penthouse" 
+                     class="card-img">
                 <div class="card-content">
-                    <h3>Quintana Campestre</h3>
-                    <p>5 hectáreas con casa principal, caballerizas y piscina natural</p>
-                </div>
-            </div>
-            <div class="propiedad-card">
-                <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                     alt="Terreno" 
-                     class="propiedad-img">
-                <div class="card-content">
-                    <h3>Terreno Urbanizable</h3>
-                    <p>1,200m² en zona en desarrollo con todos los servicios básicos</p>
+                    <h3>Downtown Penthouse</h3>
+                    <p>Urban sophistication at its finest. This 3-bedroom penthouse offers 360° city views and premium downtown location.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="formulario">
-        <form>
-            <h2 style="margin-bottom: 1.5rem; text-align: center;">¡Encuentra tu propiedad ideal hoy!</h2>
-            <input type="text" placeholder="Nombre completo" required>
-            <input type="number" placeholder="¿Cuál es tu presupuesto?" required>
-            <select required>
-                <option value="">Tipo de propiedad</option>
-                <option>Departamento</option>
-                <option>Casa</option>
-                <option>Terreno</option>
-            </select>
-            <button type="submit">Enviar Consulta</button>
-        </form>
-    </section>
-
-    <script>
-        // Smooth scroll polyfill for older browsers
-        if ('scrollBehavior' in document.documentElement.style === false) {
-            Promise.all([
-                import('smoothscroll-polyfill').then(m => m.smoothscrollPolyfill)
-            ]).then(() => {
-                // Smooth scroll behavior polyfill
-                window.__forceSmoothScrollPolyfill__ = true;
-            })
-        }
-    </script>
 </body>
 </html>
